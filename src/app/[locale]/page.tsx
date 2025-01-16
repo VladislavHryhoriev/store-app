@@ -1,15 +1,17 @@
-import Image from "next/image";
+import Container from "@/components/shared/container";
+
+const links = [{ title: "", category: "" }];
 
 export default function HomePage() {
   return (
-    <div className="mt-16 flex items-center justify-center">
-      <Image
-        src="/image.jpg"
-        alt="test"
-        width={300}
-        height={300}
-        className="object-cover"
-      />
+    <div>
+      <Container>
+        <aside>
+          <ul>
+            <li></li>
+          </ul>
+        </aside>
+      </Container>
     </div>
   );
 }

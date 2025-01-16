@@ -1,9 +1,9 @@
 import { pagesConfig } from "@/pages.config";
 
 export const LINKS = [
-  { label: "Доставка и оплата", href: pagesConfig.home },
-  { label: "Кредит", href: pagesConfig.home },
-  { label: "Гарантия", href: pagesConfig.home },
-  { label: "Возврат и обмен", href: pagesConfig.home },
-  { label: "Контакты", href: pagesConfig.home },
+  { key: "deliveryAndPayment", href: pagesConfig.home },
+  { key: "credit", href: pagesConfig.home },
+  { key: "warranty", href: pagesConfig.home },
+  { key: "returnsAndExchanges", href: pagesConfig.home },
+  { key: "contacts", href: pagesConfig.home },
 ];
