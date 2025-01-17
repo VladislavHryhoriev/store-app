@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
 	:root {
 		--background: 0 0% 100%;
@@ -60,7 +56,13 @@ body {
 		--chart-4: 280 65% 60%;
 		--chart-5: 340 75% 55%;
 	}
+
+	* {
+		@apply border-border;
+	}
+
 	body {
 		@apply bg-stone-950 text-stone-50;
+		font-family: Arial, Helvetica, sans-serif;
 	}
 }
