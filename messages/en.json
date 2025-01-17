@@ -1,6 +1,9 @@
 {
-	"HomePage": {
-		"title": "Hello world!",
-		"about": "Go to the about page"
-	}
+  "Header": {
+    "deliveryAndPayment": "Delivery and payment",
+    "credit": "Credit",
+    "warranty": "Warranty",
+    "returnsAndExchanges": "Returns and exchanges",
+    "contacts": "Contacts"
+  }
 }
