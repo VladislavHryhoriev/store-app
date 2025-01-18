@@ -5,5 +5,15 @@
     "warranty": "Warranty",
     "returnsAndExchanges": "Returns and exchanges",
     "contacts": "Contacts"
+  },
+  "Aside": {
+    "laptopsAndComputers": "Laptops and Computers",
+    "smartphones": "Smartphones",
+    "tablets": "Tablets",
+    "accessories": "Accessories",
+    "headphones": "Headphones",
+    "monitors": "Monitors",
+    "cameras": "Cameras",
+    "printers": "Printers"
   }
 }

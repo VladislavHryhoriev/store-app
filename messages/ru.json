@@ -5,5 +5,15 @@
     "warranty": "Гарантия",
     "returnsAndExchanges": "Возврат и обмен",
     "contacts": "Контакты"
+  },
+  "Aside": {
+    "laptopsAndComputers": "Ноутбуки и компьютеры",
+    "smartphones": "Смартфоны",
+    "tablets": "Планшеты",
+    "accessories": "Аксессуары",
+    "headphones": "Наушники",
+    "monitors": "Мониторы",
+    "cameras": "Камеры",
+    "printers": "Принтеры"
   }
 }

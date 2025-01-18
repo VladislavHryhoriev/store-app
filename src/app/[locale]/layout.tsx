@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import "../globals.css";
+import { SideMenu } from "@/components/shared/aside";
+import Container from "@/components/shared/container";
 
 export default async function LocaleLayout({
   children,
@@ -27,7 +29,12 @@ export default async function LocaleLayout({
       <body className="dark">
         <NextIntlClientProvider messages={messages}>
           <Header />
-          {children}
+          <Container>
+            <div className="flex justify-between gap-8">
+              <SideMenu className="w-[250px]" />
+              <div className="flex-1">{children}</div>
+            </div>
+          </Container>
         </NextIntlClientProvider>
       </body>
     </html>
