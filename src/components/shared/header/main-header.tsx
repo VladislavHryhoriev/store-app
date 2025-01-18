@@ -11,7 +11,7 @@ import {
 import { Input } from "../../ui/input";
 import Container from "../container";
 
-export const MainHeader = () => {
+const MainHeader = () => {
   return (
     <div className="bg-zinc-800">
       <Container>
@@ -64,3 +64,5 @@ export const MainHeader = () => {
     </div>
   );
 };
+
+export default MainHeader;

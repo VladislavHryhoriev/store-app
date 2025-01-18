@@ -1,3 +1,3 @@
 export default function HomePage() {
-  return <div>asd</div>;
+  return <div>./</div>;
 }

@@ -31,8 +31,8 @@ export default async function LocaleLayout({
           <Header />
           <Container>
             <div className="flex justify-between gap-8">
-              <SideMenu className="w-[250px]" />
-              <div className="flex-1">{children}</div>
+              <SideMenu className="h-fit w-[250px]" />
+              <div className="mt-4 h-screen flex-1">{children}</div>
             </div>
           </Container>
         </NextIntlClientProvider>

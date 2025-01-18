@@ -1,3 +1,3 @@
-export { Header } from "./header";
-export { MainHeader } from "./main-header";
-export { PreHeader } from "./pre-header";
+export { default as Header } from "./header";
+export { default as MainHeader } from "./main-header";
+export { default as PreHeader } from "./pre-header";

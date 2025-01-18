@@ -13,7 +13,7 @@ import {
 } from "../../ui/select";
 import Container from "../container";
 
-export const PreHeader = () => {
+const PreHeader = () => {
   const t = useTranslations("Header");
   const locale = useLocale();
   const pathname = usePathname();
@@ -70,3 +70,5 @@ export const PreHeader = () => {
     </div>
   );
 };
+
+export default PreHeader;
