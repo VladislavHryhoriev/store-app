@@ -1,7 +1,7 @@
 class PagesConfig {
   home = "/";
   cart = "/cart";
-  user = "/user";
+  profile = "/profile";
   favorites = "/favorites";
   compare = "/compare";
 }

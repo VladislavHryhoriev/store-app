@@ -35,7 +35,7 @@ const MainHeader = () => {
 
           <div className="flex gap-2">
             <Link
-              href={pagesConfig.user}
+              href={pagesConfig.profile}
               className="rounded p-2 transition-colors hover:bg-zinc-700 hover:text-purple-400"
             >
               <UserRound />
