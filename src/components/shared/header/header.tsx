@@ -1,6 +1,6 @@
 import { MainHeader, PreHeader } from ".";
 
-const Header = () => {
+export const Header = () => {
   return (
     <header>
       <PreHeader />
@@ -8,5 +8,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

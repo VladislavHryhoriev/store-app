@@ -6,4 +6,4 @@ export const LINKS = [
   { key: "warranty", href: pagesConfig.home },
   { key: "returnsAndExchanges", href: pagesConfig.home },
   { key: "contacts", href: pagesConfig.home },
-];
+] as const;

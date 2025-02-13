@@ -23,6 +23,9 @@ export const CATEGORIES = [
   { id: 5, category: "monitors", href: "/monitors", icon: Monitor },
   { id: 6, category: "printers", href: "/printers", icon: Printer },
   { id: 7, category: "accessories", href: "/accessories", icon: Box },
-];
+  { id: 7, category: "accessories", href: "/accessories", icon: Box },
+  { id: 7, category: "accessories", href: "/accessories", icon: Box },
+  { id: 7, category: "accessories", href: "/accessories", icon: Box },
+] as const;
 
 export type Category = (typeof CATEGORIES)[number];
