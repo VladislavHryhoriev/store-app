@@ -1,11 +1,12 @@
-import { Header } from "@/components/shared/header";
+import SideMenu from "@/components/shared/aside/side-menu";
+import Container from "@/components/shared/container";
+import Footer from "@/components/shared/footer/footer";
+import Header from "@/components/shared/header/header";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import "../globals.css";
-import { SideMenu } from "@/components/shared/aside";
-import Container from "@/components/shared/container";
 
 export default async function LocaleLayout({
   children,
@@ -15,26 +16,24 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale as "ru" | "ua" | "en")) {
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className="dark">
+    <html lang={locale} className="dark">
+      <body>
         <NextIntlClientProvider messages={messages}>
           <Header />
           <Container>
-            <div className="flex justify-between gap-8">
-              <SideMenu className="h-fit w-[250px]" />
-              <div className="mt-4 h-screen flex-1">{children}</div>
+            <div className="flex justify-between gap-4">
+              <SideMenu className="absolute z-10 h-fit w-[250px]" />
+              <div className="mt-4 min-h-screen flex-1">{children}</div>
             </div>
           </Container>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

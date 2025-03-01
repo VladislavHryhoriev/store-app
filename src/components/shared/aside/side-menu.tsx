@@ -2,7 +2,7 @@ import { CATEGORIES } from "@/constants/header/categories";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
-export const SideMenu = ({ className }: { className?: string }) => {
+const SideMenu = ({ className }: { className?: string }) => {
   const t = useTranslations("Aside");
   return (
     <aside className={`rounded-b bg-zinc-800 p-2 ${className}`}>
@@ -11,7 +11,7 @@ export const SideMenu = ({ className }: { className?: string }) => {
         {CATEGORIES.map((category) => (
           <li key={category.id}>
             <Link
-              href={category.href}
+              href={`/categories${category.href}`}
               className="flex items-center gap-2 rounded p-2 transition-colors hover:bg-zinc-700 hover:text-red-400"
             >
               <category.icon />
@@ -23,3 +23,5 @@ export const SideMenu = ({ className }: { className?: string }) => {
     </aside>
   );
 };
+
+export default SideMenu;

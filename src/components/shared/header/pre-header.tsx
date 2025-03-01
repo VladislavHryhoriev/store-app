@@ -1,7 +1,6 @@
 "use client";
 import { LINKS } from "@/constants/header/links";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
-import { pagesConfig } from "@/pages.config";
 import { useLocale, useTranslations } from "next-intl";
 import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
 import {
@@ -13,7 +12,7 @@ import {
 } from "../../ui/select";
 import Container from "../container";
 
-export const PreHeader = () => {
+const PreHeader = () => {
   const t = useTranslations("Header");
   const locale = useLocale();
   const pathname = usePathname();
@@ -26,12 +25,8 @@ export const PreHeader = () => {
   return (
     <div>
       <Container>
-        <div className="flex items-center justify-between py-2">
-          <div>
-            <Link href={pagesConfig.home}>
-              <h1>My Store</h1>
-            </Link>
-          </div>
+        <div className="flex h-12 items-center justify-between bg-stone-950 py-2">
+          <div></div>
           <div className="flex gap-4">
             {LINKS.map((link) => (
               <Link
@@ -45,16 +40,16 @@ export const PreHeader = () => {
           </div>
           <div className="flex items-center gap-4">
             <div className="flex gap-4">
-              <a href="#" className="hover:text-red-400">
+              <Link href="#" className="hover:text-red-400">
                 <FaInstagram />
-              </a>
-              <a href="#" className="hover:text-sky-400">
+              </Link>
+              <Link href="#" className="hover:text-sky-400">
                 <FaTelegramPlane />
-              </a>
+              </Link>
             </div>
             <div>
               <Select onValueChange={handleLocaleChange}>
-                <SelectTrigger className="w-fit">
+                <SelectTrigger>
                   <SelectValue placeholder={locale.toUpperCase()} />
                 </SelectTrigger>
                 <SelectContent>
@@ -70,3 +65,5 @@ export const PreHeader = () => {
     </div>
   );
 };
+
+export default PreHeader;

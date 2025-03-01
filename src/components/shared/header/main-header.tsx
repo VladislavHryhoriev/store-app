@@ -1,8 +1,18 @@
+import LogoIcon from "@/components/ui/logo-icon";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Link } from "@/i18n/routing";
 import { pagesConfig } from "@/pages.config";
 import {
   Heart,
   LayoutGrid,
+  Menu,
   Scale,
   Search,
   ShoppingCart,
@@ -11,26 +21,46 @@ import {
 import { Input } from "../../ui/input";
 import Container from "../container";
 
-export const MainHeader = () => {
+const MainHeader = () => {
   return (
     <div className="bg-zinc-800">
       <Container>
         <div className="flex items-center justify-between gap-4">
-          <nav>
-            <Link
-              href={pagesConfig.home}
-              className="text- flex items-center gap-4 rounded bg-red-400 px-8 py-5"
-            >
-              <span>
-                <LayoutGrid />
-              </span>
-              <span className="font-bold uppercase">Ассортимент</span>
+          <nav className="flex items-center gap-4">
+            <Sheet>
+              <SheetTrigger className="cursor-pointer p-1">
+                <Menu />
+              </SheetTrigger>
+              <SheetContent className="w-[400px] sm:w-[540px]">
+                <SheetHeader>
+                  <SheetTitle>Are you absolutely sure?</SheetTitle>
+                  <SheetDescription>
+                    This action cannot be undone. This will permanently delete
+                    your account and remove your data from our servers.
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
+
+            <Link href={pagesConfig.home} className="py-2">
+              <LogoIcon />
             </Link>
           </nav>
 
-          <div className="relative min-w-[300px] max-w-[600px] flex-1">
-            <Search className="absolute left-3 top-1/2 w-5 -translate-y-1/2" />
-            <Input placeholder="Поиск" className="h-10 bg-zinc-700 pl-10" />
+          <div className="flex w-full max-w-[600px] min-w-[300px] items-center gap-6">
+            <Link href={pagesConfig.home} className="flex items-center gap-2">
+              <span>
+                <LayoutGrid />
+              </span>
+              <span>Каталог</span>
+            </Link>
+            <div className="relative w-full flex-grow">
+              <Search className="absolute top-1/2 left-3 w-5 -translate-y-1/2" />
+              <Input
+                placeholder="Поиск"
+                className="h-10 w-full max-w-full bg-zinc-700 pl-10"
+              />
+            </div>
           </div>
 
           <div className="flex gap-2">
@@ -64,3 +94,5 @@ export const MainHeader = () => {
     </div>
   );
 };
+
+export default MainHeader;

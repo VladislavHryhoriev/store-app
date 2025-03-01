@@ -10,16 +10,13 @@ import { MEDIA } from "@/constants/media";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 
-const MediaCarousel = () => {
+const MediaCarousel = ({ className }: { className?: string }) => {
   return (
-    <div>
-      <Carousel plugins={[Autoplay({ delay: 3000 })]} opts={{ loop: true }}>
+    <div className={className}>
+      <Carousel plugins={[Autoplay({ delay: 6000 })]} opts={{ loop: true }}>
         <CarouselContent className="min-h-max">
           {MEDIA.map((item) => (
-            <CarouselItem
-              key={item.id}
-              className="relative flex items-center justify-center"
-            >
+            <CarouselItem key={item.id}>
               <Image
                 src={item.image}
                 width={3150}

@@ -9,7 +9,7 @@ const Page = () => {
     console.log(params);
   }, [params]);
 
-  return <div>{params.category}</div>;
+  return <div className="ml-[266px]">{params.category}</div>;
 };
 
 export default Page;
