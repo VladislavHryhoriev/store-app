@@ -11,7 +11,9 @@ const Footer = () => {
               <LogoIcon />
             </div>
             <div>
-              <p>© 2023. Все права защищены</p>
+              <p>
+                © {new Date().getFullYear()} PCStore. Некоторые права защищены
+              </p>
             </div>
           </div>
         </Container>

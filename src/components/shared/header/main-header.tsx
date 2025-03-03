@@ -1,51 +1,24 @@
+"use client";
 import LogoIcon from "@/components/ui/logo-icon";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import { Link } from "@/i18n/routing";
-import { pagesConfig } from "@/pages.config";
-import {
-  Heart,
-  LayoutGrid,
-  Menu,
-  Scale,
-  Search,
-  ShoppingCart,
-  UserRound,
-} from "lucide-react";
+import { pagesConfig, sidebarLinks } from "@/pages.config";
+import { LayoutGrid, Search } from "lucide-react";
 import { Input } from "../../ui/input";
 import Container from "../container";
+import BurgerMenu from "./burger-menu";
+import { cn } from "@/lib/utils";
 
 const MainHeader = () => {
   return (
     <div className="bg-zinc-800">
       <Container>
-        <div className="flex items-center justify-between gap-4">
-          <nav className="flex items-center gap-4">
-            <Sheet>
-              <SheetTrigger className="cursor-pointer p-1">
-                <Menu />
-              </SheetTrigger>
-              <SheetContent className="w-[400px] sm:w-[540px]">
-                <SheetHeader>
-                  <SheetTitle>Are you absolutely sure?</SheetTitle>
-                  <SheetDescription>
-                    This action cannot be undone. This will permanently delete
-                    your account and remove your data from our servers.
-                  </SheetDescription>
-                </SheetHeader>
-              </SheetContent>
-            </Sheet>
-
+        <nav className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <BurgerMenu />
             <Link href={pagesConfig.home} className="py-2">
-              <LogoIcon />
+              <LogoIcon size={3} />
             </Link>
-          </nav>
+          </div>
 
           <div className="flex w-full max-w-[600px] min-w-[300px] items-center gap-6">
             <Link href={pagesConfig.home} className="flex items-center gap-2">
@@ -63,33 +36,22 @@ const MainHeader = () => {
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <Link
-              href={pagesConfig.profile}
-              className="rounded p-2 transition-colors hover:bg-zinc-700 hover:text-purple-400"
-            >
-              <UserRound />
-            </Link>
-            <Link
-              href={pagesConfig.favorites}
-              className="rounded p-2 transition-colors hover:bg-zinc-700 hover:text-red-400"
-            >
-              <Heart />
-            </Link>
-            <Link
-              href={pagesConfig.compare}
-              className="rounded p-2 transition-colors hover:bg-zinc-700 hover:text-yellow-400"
-            >
-              <Scale />
-            </Link>
-            <Link
-              href={pagesConfig.cart}
-              className="rounded p-2 transition-colors hover:bg-zinc-700 hover:text-green-400"
-            >
-              <ShoppingCart />
-            </Link>
-          </div>
-        </div>
+          <ul className="flex gap-2">
+            {sidebarLinks.map((link) => (
+              <li key={link.key}>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "block rounded p-2 transition-colors hover:bg-zinc-700",
+                    link.styles,
+                  )}
+                >
+                  {link.icon}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </Container>
     </div>
   );

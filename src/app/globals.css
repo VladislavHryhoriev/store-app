@@ -3,6 +3,29 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+	@apply w-2; /* Сделаем скролл чуть шире */
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-zinc-800 rounded-lg; /* Тёмный фон и скруглённые углы */
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-zinc-500/70 rounded-lg transition-colors duration-200;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-zinc-300/80; /* Светлее при наведении */
+}
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: theme("colors.zinc.500") theme("colors.zinc.800");
+}
+
 :root {
 	/* --background: 0 0% 100%;
 	--foreground: 0 0% 3.9%;

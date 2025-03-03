@@ -1,26 +1,14 @@
 "use client";
+import LangSwitcher from "@/components/ui/lang-switcher";
 import { LINKS } from "@/constants/header/links";
-import { Link, usePathname, useRouter } from "@/i18n/routing";
-import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+import { Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../../ui/select";
 import Container from "../container";
 
 const PreHeader = () => {
   const t = useTranslations("Header");
-  const locale = useLocale();
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const handleLocaleChange = (newLocale: string) => {
-    router.push(pathname, { locale: newLocale });
-  };
 
   return (
     <div>
@@ -38,7 +26,16 @@ const PreHeader = () => {
               </Link>
             ))}
           </div>
+
           <div className="flex items-center gap-4">
+            <div>
+              <Link
+                href={"tel:+380123456789"}
+                className="flex items-center gap-2 text-sm hover:text-zinc-300"
+              >
+                <Phone size={16} /> <span>+380123456789</span>
+              </Link>
+            </div>
             <div className="flex gap-4">
               <Link href="#" className="hover:text-red-400">
                 <FaInstagram />
@@ -47,18 +44,7 @@ const PreHeader = () => {
                 <FaTelegramPlane />
               </Link>
             </div>
-            <div>
-              <Select onValueChange={handleLocaleChange}>
-                <SelectTrigger>
-                  <SelectValue placeholder={locale.toUpperCase()} />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="ru">RU</SelectItem>
-                  <SelectItem value="ua">UA</SelectItem>
-                  <SelectItem value="en">EN</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+            <LangSwitcher />
           </div>
         </div>
       </Container>
