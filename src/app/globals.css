@@ -26,6 +26,10 @@
 	scrollbar-color: theme("colors.zinc.500") theme("colors.zinc.800");
 }
 
+button {
+	@apply cursor-pointer;
+}
+
 :root {
 	/* --background: 0 0% 100%;
 	--foreground: 0 0% 3.9%;

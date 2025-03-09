@@ -7,12 +7,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MEDIA } from "@/constants/media";
+import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 
 const MediaCarousel = ({ className }: { className?: string }) => {
   return (
-    <div className={className}>
+    <div className={cn(className, "overflow-hidden rounded-md")}>
       <Carousel plugins={[Autoplay({ delay: 6000 })]} opts={{ loop: true }}>
         <CarouselContent className="min-h-max">
           {MEDIA.map((item) => (
@@ -22,7 +23,7 @@ const MediaCarousel = ({ className }: { className?: string }) => {
                 width={3150}
                 height={1470}
                 alt="item"
-                className="object-cover"
+                className="rounded-md object-cover"
                 priority
               />
             </CarouselItem>

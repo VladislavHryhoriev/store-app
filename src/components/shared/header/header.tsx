@@ -1,10 +1,10 @@
 import MainHeader from "./main-header";
-import PreHeader from "./pre-header";
+import TopBar from "./top-bar";
 
 const Header = () => {
   return (
     <header className="sticky -top-[3rem] z-50 shadow-md">
-      <PreHeader />
+      <TopBar />
       <MainHeader />
     </header>
   );

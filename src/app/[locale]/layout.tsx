@@ -29,7 +29,7 @@ export default async function LocaleLayout({
           <Header />
           <Container>
             <div className="flex justify-between gap-4">
-              <SideMenu className="absolute z-10 h-fit w-[250px]" />
+              <SideMenu className="absolute z-10 mt-4 h-fit w-[250px]" />
               <div className="mt-4 min-h-screen flex-1">{children}</div>
             </div>
           </Container>

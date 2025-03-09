@@ -20,23 +20,25 @@ const MainHeader = () => {
             </Link>
           </div>
 
-          <div className="flex w-full max-w-[600px] min-w-[300px] items-center gap-6">
-            <Link href={pagesConfig.home} className="flex items-center gap-2">
-              <span>
-                <LayoutGrid />
-              </span>
+          <div className="flex w-full max-w-[600px] min-w-[300px] items-center gap-8">
+            <Link
+              href={pagesConfig.catalog}
+              className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-white/10"
+            >
+              <LayoutGrid className="h-5 w-5 text-sky-400" />
               <span>Каталог</span>
             </Link>
+
             <div className="relative w-full flex-grow">
-              <Search className="absolute top-1/2 left-3 w-5 -translate-y-1/2" />
+              <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-zinc-400" />
               <Input
-                placeholder="Поиск"
-                className="h-10 w-full max-w-full bg-zinc-700 pl-10"
+                placeholder="Поиск товаров..."
+                className="h-10 w-full rounded-xl bg-white/5 pl-10 text-sm transition-colors placeholder:text-zinc-500 hover:bg-white/10 focus:bg-white/10 focus:ring-1 focus:ring-sky-400"
               />
             </div>
           </div>
 
-          <ul className="flex gap-2">
+          <ul className="flex items-center gap-3">
             {sidebarLinks.map((link) => (
               <li key={link.key}>
                 <Link

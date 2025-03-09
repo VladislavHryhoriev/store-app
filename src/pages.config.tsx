@@ -7,6 +7,7 @@ class PagesConfig {
   profile = "/profile";
   favorites = "/favorites";
   compare = "/compare";
+  catalog = "/catalog";
 }
 
 export const pagesConfig = new PagesConfig();
