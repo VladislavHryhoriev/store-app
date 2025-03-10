@@ -37,7 +37,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="ml-[266px] space-y-8 p-6">
+    <div className="space-y-8 p-6">
       <Card className="border-zinc-700/50 bg-zinc-800 p-6">
         <div className="flex items-start gap-8">
           <div className="relative">

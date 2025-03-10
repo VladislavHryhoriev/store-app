@@ -121,7 +121,7 @@ const Page = () => {
   };
 
   return (
-    <div className="ml-[266px] min-h-screen">
+    <div className="min-h-screen">
       <div className="mx-auto max-w-7xl p-6">
         <h1 className="mb-8 text-3xl font-semibold tracking-tight">Каталог</h1>
 

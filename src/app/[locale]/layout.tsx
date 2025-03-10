@@ -1,4 +1,3 @@
-import SideMenu from "@/components/shared/aside/side-menu";
 import Container from "@/components/shared/container";
 import Footer from "@/components/shared/footer/footer";
 import Header from "@/components/shared/header/header";
@@ -28,10 +27,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Header />
           <Container>
-            <div className="flex justify-between gap-4">
-              <SideMenu className="absolute z-10 mt-4 h-fit w-[250px]" />
-              <div className="mt-4 min-h-screen flex-1">{children}</div>
-            </div>
+            <div className="mt-4 min-h-screen">{children}</div>
           </Container>
           <Footer />
         </NextIntlClientProvider>

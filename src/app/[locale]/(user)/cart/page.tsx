@@ -62,7 +62,7 @@ const Page = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="ml-[266px] min-h-screen">
+      <div className="min-h-screen">
         <div className="mx-auto max-w-7xl p-6">
           <div className="mb-8 flex items-center gap-4">
             <div className="relative">
@@ -70,7 +70,12 @@ const Page = () => {
                 <ShoppingCart className="h-6 w-6 text-sky-400 transition-transform duration-300 group-hover:scale-110" />
               </div>
             </div>
-            <h1 className="text-2xl font-semibold">Корзина</h1>
+            <div>
+              <h1 className="text-2xl font-semibold">Корзина</h1>
+              <p className="mt-1 text-sm text-zinc-400">
+                {cart.length} товаров
+              </p>
+            </div>
           </div>
 
           <div className="rounded-xl border border-zinc-700/50 bg-zinc-800 p-8 text-center">
@@ -88,7 +93,7 @@ const Page = () => {
   }
 
   return (
-    <div className="ml-[266px] min-h-screen">
+    <div className="min-h-screen">
       <div className="mx-auto max-w-7xl p-6">
         {/* Хедер */}
         <div className="mb-8 flex items-center justify-between">
@@ -155,7 +160,7 @@ const Page = () => {
                         >
                           <Minus className="h-3 w-3" />
                         </Button>
-                        <span className="w-4 text-center text-sm">
+                        <span className="text-center text-sm">
                           {item.quantity}
                         </span>
                         <Button

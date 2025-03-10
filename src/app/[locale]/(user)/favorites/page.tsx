@@ -36,7 +36,7 @@ const FavoritesPage = () => {
   };
 
   return (
-    <div className="ml-[266px] min-h-screen">
+    <div className="min-h-screen">
       <div className="mx-auto max-w-7xl space-y-6 p-6">
         {/* Хедер */}
         <div className="flex items-center justify-between">
@@ -79,7 +79,7 @@ const FavoritesPage = () => {
           {favorites.map((item) => (
             <Card
               key={item.id}
-              className="group relative overflow-hidden border-zinc-700/50 bg-zinc-800 p-4"
+              className="group relative overflow-hidden border-zinc-700/50 bg-zinc-800 p-6"
             >
               <div className="relative aspect-square overflow-hidden rounded-lg bg-zinc-900">
                 <Image

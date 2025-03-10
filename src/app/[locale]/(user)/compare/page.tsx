@@ -78,7 +78,7 @@ const Page = () => {
 
   if (isEmpty) {
     return (
-      <div className="ml-[266px] min-h-screen">
+      <div className="min-h-screen">
         <div className="mx-auto max-w-7xl p-6">
           <div className="mb-8 flex items-center gap-4">
             <div className="relative">
@@ -114,9 +114,9 @@ const Page = () => {
   };
 
   return (
-    <div className="ml-[266px] min-h-screen">
+    <div className="min-h-screen">
       <div className="mx-auto max-w-7xl p-6">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="flex items-center justify-between pb-6">
           <div className="flex items-center gap-4">
             <div className="relative">
               <div className="group relative rounded-lg bg-zinc-800 p-3">
